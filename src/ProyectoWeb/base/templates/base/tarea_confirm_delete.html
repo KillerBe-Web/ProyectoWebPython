@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'base/principal.html' %}
+
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario para eliminar tareas</title>
+    <h1>Formulario para eliminacion de tareas</h1>
+</head>
+<body>
+
+    <form method="post">
+        {% csrf_token %}
+        <p>eliminaras la tarea de: {{tareas}}</p>
+        <input type="submit" value="Elminar">
+        <a href="{% url 'tareas' %}">Volver</a>
+
+    </form>
+
+
+</body>
+</html>
+{% endblock content %}
