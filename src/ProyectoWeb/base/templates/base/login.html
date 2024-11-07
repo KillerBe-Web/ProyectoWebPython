@@ -4,19 +4,23 @@
 
 {% block content %}
 <head>
-    <meta charset="UTF-8">
-    <title>Formulario de logeo</title>
+<meta charset="UTF-8">
+<title>Formulario de logeo</title>
+    <div class="barra-superior">
+        <h1>Ingresa tu usuario</h1>
+    </div>
+
 </head>
 <body>
-    <h1>Ingresa tu usuario</h1>
+<div class="envoltorio-items-tarea">
+    <form method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input class="button" type="submit" value="Ingresar">
+    </form>
+    <p>¿No tienes una cuenta?. <a href="{% url 'registro' %}">Registrate</a></p>
+</div>
 
-<form method="post">
-    {% csrf_token %}
-    {{form.as_p}}
-    <input type="submit" value="Ingresar">
-
-</form>
-<p>¿No tienes una cuenta?. <a href="{% url 'registro' %}">Registrate</a></p>
 
 </body>
 </html>

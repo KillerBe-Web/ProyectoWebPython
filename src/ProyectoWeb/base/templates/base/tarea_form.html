@@ -4,18 +4,25 @@
 
 {% block content %}
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
     <title>Formulario</title>
-        <h1> Formulario para crear nueva tarea</h1>
-</head>
-<body>
 
-    <form method="post" action="">
+
+<div class="barra-superior">
+    <a href="{% url 'tareas' %}">&#x1F828; Volver</a>
+</div>
+
+ <div class="cuerpo-tarjeta">
+     <form method="post" action="">
         {% csrf_token %}
         {{form.as_p}}
-        <input type="submit" value="Enviar">
-        <a href="{% url 'tareas' %}">Volver</a>
+        <input type="submit" class="button" value="Enviar">
     </form>
+ </div>
+
+
+</head>
+<body>
 
 
 

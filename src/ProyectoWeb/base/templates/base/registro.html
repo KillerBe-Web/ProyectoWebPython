@@ -4,17 +4,30 @@
 
 {% block content %}
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+<meta charset="UTF-8">
+<title>Title</title>
+    <div class="barra-superior">
+        <h1>Registrate</h1>
+    </div>
 </head>
 <body>
-    <h1>Registrate</h1>
-<form method="post">
-    {% csrf_token %}
-    {{form.as_p}}
-    <input type="submit" value="Registrar">
-</form>
-<p>¿Ya tienes una cuenta?. <a href="{% url 'login' %}">Ingresa</a></p>
+ <div class="cuerpo-tarjeta">
+    <form method="post">
+        {% csrf_token %}
+
+        <label>{{form.username.label}}</label>
+        {{form.username}}
+
+        <label>{{form.password1.label}}</label>
+        {{form.password1}}
+
+        <label>{{form.password2.label}}</label>
+        {{form.password2}}
+
+        <input style="margin-top:10px;" class="button" type="submit" value="Registrar">
+    </form>
+    <p>¿Ya tienes una cuenta?. <a href="{% url 'login' %}">Ingresa</a></p>
+ </div>
 </body>
 </html>
 {% endblock content %}

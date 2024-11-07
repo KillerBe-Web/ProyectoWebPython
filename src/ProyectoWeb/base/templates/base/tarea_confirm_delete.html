@@ -4,20 +4,21 @@
 
 {% block content %}
 <head>
-    <meta charset="UTF-8">
-    <title>Formulario para eliminar tareas</title>
-    <h1>Formulario para eliminacion de tareas</h1>
+<meta charset="UTF-8">
+<title>Formulario para eliminar tareas</title>
+
+    <div class="barra-superior">
+    <a href="{% url 'tareas' %}">&#x1F828; Volver</a>
+    </div>
 </head>
 <body>
-
-    <form method="post">
-        {% csrf_token %}
-        <p>eliminaras la tarea de: {{tareas}}</p>
-        <input type="submit" value="Elminar">
-        <a href="{% url 'tareas' %}">Volver</a>
-
-    </form>
-
+    <div class="cuerpo-tarjeta">
+        <form method="post">
+            {% csrf_token %}
+            <h3>Eliminaras la tarea: {{tareas}}</h3>
+            <input class="button" type="submit" value="Elminar">
+        </form>
+    </div>
 
 </body>
 </html>
